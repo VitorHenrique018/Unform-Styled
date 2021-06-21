@@ -13,7 +13,9 @@ export default function Input({ name, ...rest }) {
     });
   }, [registerField, fieldName]);
 
-  return <input ref={inputRef} defaultValue={defaultValue} {...rest} />;
+  return (
+    <div>
+      <input ref={inputRef} defaultValue={defaultValue} {...rest} />
+    </div>
+  );
 }
-
-//...rest serve para passar types = ex type password

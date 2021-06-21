@@ -1,3 +1,5 @@
+import React, {useRef} from "react"
+
 import { Circulo } from "./components/Circulo";
 import { Title } from "./components/Title";
 import { Button } from "./components/Button";
@@ -13,8 +15,13 @@ const initialData = {
 };
 
 function App() {
+
+  const formRef = useRef(null)
+
   function handleSubmit(data) {
+
     console.log(data);
+
   }
 
   return (
@@ -23,7 +30,7 @@ function App() {
       <Circulo />
       <Button />
 
-      <Form initialData={initialData} onSubmit={handleSubmit}>
+      <Form ref={formRef} initialData={initialData} onSubmit={handleSubmit}>
         <Input name="name" />
         <Input type="email" name="email" />
         <Input type="password" name="password" />
